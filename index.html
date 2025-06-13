@@ -3,172 +3,143 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PitbikeDrive</title>
+  <title>PitBikeDrive</title>
   <style>
-    body, html {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
       height: 100%;
-      font-family: 'Arial', sans-serif;
-      color: white;
+      font-family: 'Arial Black', Gadget, sans-serif;
+      color: #ffffff;
       overflow: hidden;
     }
 
     header {
-      position: absolute;
+      position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 30px;
+      padding: 10px 40px;
       background: rgba(0, 0, 0, 0.6);
-      z-index: 2;
+      z-index: 10;
     }
 
-    .logo {
+    header img.logo {
       height: 100px;
     }
 
     nav {
       display: flex;
-      flex-direction: column;
-      gap: 10px;
-      text-align: right;
-    }
-
-    nav a {
-      color: #ffcc00;
-      text-decoration: none;
-      font-weight: bold;
+      gap: 20px;
       font-size: 20px;
     }
 
-    .language-switch {
+    nav a {
+      text-decoration: none;
+      color: #ffcc00;
+      font-weight: bold;
+    }
+
+    .lang-switcher, .contacts {
       display: flex;
       gap: 10px;
-      margin-top: 10px;
-      justify-content: flex-end;
+      align-items: center;
     }
 
-    .language-switch img {
-      height: 24px;
-      cursor: pointer;
+    .lang-switcher img, .contacts img {
+      width: 30px;
+      height: 20px;
     }
 
-    .contact-info {
+    .contacts span {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ffcc00;
+    }
+
+    .main {
+      position: relative;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
+      z-index: 1;
+    }
+
+    .main-content {
+      max-width: 40%;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 15px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .menu {
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
-      gap: 10px;
-      margin-top: 10px;
+      gap: 15px;
+      font-size: 22px;
     }
 
-    .contact-info span {
-      font-size: 18px;
+    .menu a {
+      text-decoration: none;
+      color: #00ffff;
+      font-weight: bold;
     }
 
-    .contact-info img {
-      height: 24px;
-      vertical-align: middle;
-      margin-right: 5px;
-    }
-
-    .content {
-      position: absolute;
-      top: 120px;
-      bottom: 0;
-      left: 30px;
-      right: 30%;
-      overflow-y: auto;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 20px;
-      z-index: 2;
-    }
-
-    .video-bg {
+    .background-video {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 0;
+      object-fit: cover;
+      z-index: -1;
     }
-
-    iframe {
-      width: 100%;
-      height: 100%;
-    }
-
-    .map {
-      margin-top: 30px;
-    }
-
   </style>
 </head>
 <body>
-  <div class="video-bg">
-    <iframe src="https://www.youtube.com/embed/zjxWjEroCMY?autoplay=1&mute=1&loop=1&playlist=zjxWjEroCMY" frameborder="0" allowfullscreen></iframe>
-  </div>
+  <video class="background-video" autoplay muted loop>
+    <source src="https://www.youtube.com/embed/zjxWjEroCMY?autoplay=1&mute=1&loop=1&playlist=zjxWjEroCMY" type="video/mp4" />
+    Ваш браузер не підтримує відео.
+  </video>
 
   <header>
-    <img src="logo.png" alt="PitbikeDrive Logo" class="logo" />
-
-    <div>
-      <nav>
-        <a href="#about">ПРО НАС</a>
-        <a href="#advantages">НАШІ ПЕРЕВАГИ</a>
-        <a href="#services">ПОСЛУГИ та ціни</a>
-        <a href="#conditions">УМОВИ</a>
-        <a href="#contacts">КОНТАКТИ</a>
-      </nav>
-
-      <div class="language-switch">
-        <img src="ua_flag.png" alt="UA" title="Українська" />
-        <img src="ru_flag.png" alt="RU" title="Русский" />
-        <img src="en_flag.png" alt="EN" title="English" />
-      </div>
-
-      <div class="contact-info">
-        <span><img src="insta_icon.png" alt="Instagram" /> @pitbikedrive</span>
-        <span><img src="phone_icon.png" alt="Phone" /> +38 (095) 325-16-90</span>
-      </div>
+    <img src="logo.png" alt="PitBikeDrive Logo" class="logo" />
+    <nav class="menu">
+      <a href="#about">ПРО НАС</a>
+      <a href="#advantages">НАШІ ПЕРЕВАГИ</a>
+      <a href="#services">ПОСЛУГИ та ціни</a>
+      <a href="#conditions">УМОВИ</a>
+      <a href="#contacts">КОНТАКТИ</a>
+    </nav>
+    <div class="lang-switcher">
+      <img src="ua_flag.png" alt="UA" title="Українська" />
+      <img src="ru_flag.png" alt="RU" title="Русский" />
+      <img src="en_flag.png" alt="EN" title="English" />
+    </div>
+    <div class="contacts">
+      <img src="insta_icon.png" alt="Instagram" />
+      <img src="phone_icon.png" alt="Phone" />
+      <span>@pitbikedrive | +380 XX XXX XXXX</span>
     </div>
   </header>
 
-  <div class="content">
-    <section id="about">
-      <h2>Про нас</h2>
-      <p>PitbikeDrive — це твій квиток у світ справжнього драйву, швидкості та безпеки. Ми не просто організовуємо покатушки — ми створюємо мотокультуру нового покоління. З нами ти відчуєш справжню свободу!</p>
-    </section>
-
-    <section id="advantages">
-      <h2>Наші переваги</h2>
-      <ul>
-        <li>Професійна та потужна техніка</li>
-        <li>Індивідуальні інструктажі</li>
-        <li>Якісне екіпірування</li>
-        <li>Маршрути для новачків і профі</li>
-        <li>Максимум адреналіну з повною безпекою</li>
-      </ul>
-    </section>
-
-    <section id="services">
-      <h2>Послуги та ціни</h2>
-      <p>Скоро буде додано...</p>
-    </section>
-
-    <section id="conditions">
-      <h2>Умови</h2>
-      <p>Мінімальний вік — 14 років. Приймаємо як індивідуальні заявки, так і групові. Все, що тобі потрібно — бажання отримати круті емоції!</p>
-    </section>
-
-    <section id="contacts">
-      <h2>Контакти</h2>
-      <div class="map">
-        <iframe src="https://maps.google.com/maps?q=49.8397,24.0297&hl=uk&z=14&amp;output=embed"></iframe>
-      </div>
-    </section>
+  <div class="main">
+    <div class="main-content">
+      <h2>Культура Пітбайкінгу</h2>
+      <p>Пітбайкінг — це не просто хобі, це стиль життя. Ми розвиваємо культуру безпечного драйву та адреналінових пригод. З нами ви отримаєте незабутні враження на професійній техніці!</p>
+      <p><strong>Наша локація:</strong> <a href="https://maps.app.goo.gl/1EJhrCJArh65Wtze9" target="_blank">Google Maps</a></p>
+    </div>
   </div>
 </body>
 </html>
