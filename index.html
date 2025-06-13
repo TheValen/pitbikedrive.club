@@ -1,146 +1,99 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PitbikeDrive Club</title>
+  <title>PitbikeDrive</title>
   <style>
-    body, html {
+    body {
       margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #000;
-      color: white;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
     }
-    .video-bg {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      object-fit: cover;
-      z-index: -1;
-    }
+
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px;
-      background-color: rgba(0, 0, 0, 0.6);
+      flex-wrap: wrap;
+      background-color: #000;
     }
-    .logo {
-      height: 60px;
+
+    header img {
+      height: 70px;
+      width: auto;
     }
-    .language-switch {
+
+    header h1 {
+      font-size: 32px;
+      margin-left: 20px;
+    }
+
+    .logo-section {
       display: flex;
-      gap: 10px;
-    }
-    .lang-btn {
-      background: #f50;
-      border: none;
-      color: white;
-      padding: 5px 10px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      text-align: center;
     }
-    .hero h1 {
-      font-size: 3em;
-      margin: 0.2em 0;
+
+    .contacts {
+      text-align: right;
+      margin-top: 10px;
     }
-    .hero a {
-      background-color: #f50;
-      padding: 15px 25px;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
+
+    .contacts p {
+      color: #ffcc00;
+      font-size: 20px;
+      margin: 5px 0;
     }
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
+
+    .video-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+      padding: 0 10px;
     }
+
+    video {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
+    }
+
     footer {
-      background: #111;
-      text-align: center;
+      margin-top: 50px;
       padding: 20px;
-    }
-    .map {
-      width: 100%;
-      height: 400px;
-      border: none;
+      text-align: center;
+      background-color: #000;
+      color: #777;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
-  <video class="video-bg" autoplay muted loop>
-    <source src="video.mp4" type="video/mp4" />
-  </video>
-
   <header>
-    <img src="logo.png" class="logo" alt="PitbikeDrive logo">
-    <div class="language-switch">
-      <button class="lang-btn" onclick="setLang('ru')">RU</button>
-      <button class="lang-btn" onclick="setLang('uk')">UA</button>
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <div class="logo-section">
+      <img src="logo.png" alt="PitbikeDrive Logo" />
+      <h1>PitbikeDrive</h1>
+    </div>
+    <div class="contacts">
+      <p>📞 +38 (093) 123-45-67</p>
+      <p>📍 Київ, Україна</p>
     </div>
   </header>
 
-  <div class="hero">
-    <h1 id="slogan">Прокачай драйв на максимум!</h1>
-    <a href="#contact">Записаться на заезд</a>
+  <div class="video-container">
+    <video controls autoplay muted playsinline>
+      <source src="video.mp4" type="video/mp4">
+      Ваш браузер не підтримує відео.
+    </video>
   </div>
 
-  <section>
-    <h2 id="about-title">Что такое питбайк?</h2>
-    <p id="about-text">
-      Питбайк — это не игрушка, а настоящий мини-кроссовый мотоцикл для взрослых. Он дарит нереальный фан, драйв и эмоции на трассе. Культура питбайков родом из мотоспорта, но со временем превратилась в самостоятельное движение, где каждый может почувствовать себя профи!
-    </p>
-  </section>
-
-  <section id="contact">
-    <h2>Контакты</h2>
-    <p>Телефон: <a href="tel:+380634404099">+380634404099</a></p>
-    <p>Instagram: <a href="https://instagram.com/pitbikedrive" target="_blank">@pitbikedrive</a></p>
-    <p>TikTok: <a href="https://tiktok.com/@nikomxclub" target="_blank">@nikomxclub</a></p>
-    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2047.8802071828953!2d30.403681716132687!3d50.521752780152584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d1990a1b84a3%3A0x4e22c7751f49f05b!2zUGl0YmlrZSBDbHViIC8g0J_QvtC70YzRiNC60LDRjyDQv9C10YDQvdC-!5e0!3m2!1sru!2sua!4v1718018621134!5m2!1sru!2sua" allowfullscreen loading="lazy"></iframe>
-  </section>
-
   <footer>
-    <p>&copy; 2025 PitbikeDrive. Все права защищены.</p>
+    &copy; 2025 PitbikeDrive. Всі права захищені.
   </footer>
 
-  <script>
-    const langs = {
-      ru: {
-        slogan: "Прокачай драйв на максимум!",
-        aboutTitle: "Что такое питбайк?",
-        aboutText: "Питбайк — это не игрушка, а настоящий мини-кроссовый мотоцикл для взрослых. Он дарит нереальный фан, драйв и эмоции на трассе. Культура питбайков родом из мотоспорта, но со временем превратилась в самостоятельное движение, где каждый может почувствовать себя профи!"
-      },
-      uk: {
-        slogan: "Прокачай драйв на максимум!",
-        aboutTitle: "Що таке питбайк?",
-        aboutText: "Пітбайк — це не іграшка, а справжній міні-кросовий мотоцикл для дорослих. Він дарує шалений фан, драйв і емоції на трасі. Культура пітбайків пішла з мотоспорту, але згодом стала окремим рухом, де кожен може відчути себе профі!"
-      },
-      en: {
-        slogan: "Max out your ride!",
-        aboutTitle: "What is a pitbike?",
-        aboutText: "A pitbike is not a toy — it's a real mini motocross bike for adults. It delivers pure fun, adrenaline and emotion on the track. Born in motorsports, pitbike culture has become a movement where anyone can feel like a pro!"
-      }
-    };
-
-    function setLang(lang) {
-      document.getElementById('slogan').textContent = langs[lang].slogan;
-      document.getElementById('about-title').textContent = langs[lang].aboutTitle;
-      document.getElementById('about-text').textContent = langs[lang].aboutText;
-    }
-  </script>
 </body>
 </html>
