@@ -8,92 +8,117 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #111;
+      background: #111;
       color: #fff;
     }
-
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px;
-      flex-wrap: wrap;
+      padding: 10px 20px;
       background-color: #000;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-
     header img {
-      height: 70px;
-      width: auto;
+      height: 60px;
     }
-
-    header h1 {
-      font-size: 32px;
-      margin-left: 20px;
+    nav a {
+      margin: 0 10px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
     }
-
-    .logo-section {
+    .lang-toggle {
+      margin-left: auto;
       display: flex;
-      align-items: center;
+      gap: 10px;
     }
-
-    .contacts {
-      text-align: right;
-      margin-top: 10px;
-    }
-
-    .contacts p {
-      color: #ffcc00;
-      font-size: 20px;
-      margin: 5px 0;
-    }
-
-    .video-container {
-      display: flex;
-      justify-content: center;
-      margin-top: 40px;
-      padding: 0 10px;
-    }
-
-    video {
-      max-width: 100%;
+    .hero-video {
+      width: 100%;
       height: auto;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
     }
-
-    footer {
-      margin-top: 50px;
-      padding: 20px;
-      text-align: center;
-      background-color: #000;
-      color: #777;
-      font-size: 14px;
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #f8c300;
+    }
+    .contact {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .map-container {
+      margin-top: 20px;
+    }
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <div class="logo-section">
-      <img src="logo.png" alt="PitbikeDrive Logo" />
-      <h1>PitbikeDrive</h1>
-    </div>
-    <div class="contacts">
-      <p>📞 +38 (095) 325-16-90</p>
-      <p>📍 Київ, Україна</p>
+    <img src="logo.png" alt="PitbikeDrive logo" />
+    <nav>
+      <a href="#about">ПРО НАС</a>
+      <a href="#advantages">НАШІ ПЕРЕВАГИ</a>
+      <a href="#services">ПОСЛУГИ та ціни</a>
+      <a href="#rules">УМОВИ</a>
+      <a href="#contacts">КОНТАКТИ</a>
+    </nav>
+    <div class="lang-toggle">
+      <a href="#">UA</a>
+      <a href="#">EN</a>
     </div>
   </header>
 
-  <div class="video-container">
-    <video controls autoplay muted playsinline>
-      <source src="video.mp4" type="video/mp4">
-      Ваш браузер не підтримує відео.
-    </video>
-  </div>
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="video.mp4" type="video/mp4" />
+    Ваш браузер не підтримує відео формату MP4.
+  </video>
 
-  <footer>
-    &copy; 2025 PitbikeDrive. Всі права захищені.
-  </footer>
+  <section id="about">
+    <h2>ПРО НАС</h2>
+    <p>Ми — PitbikeDrive — драйвовий клуб, що відкриває світ мотопригод кожному! Наша мета — не лише дати спробувати питбайк, а й закохати вас у цей стиль життя. Тут вас чекає море емоцій, безпечна техніка, якісна екіпіровка та професійний супровід на кожному етапі. </p>
+  </section>
 
+  <section id="advantages">
+    <h2>НАШІ ПЕРЕВАГИ</h2>
+    <ul>
+      <li>✅ Нові, потужні та перевірені питбайки</li>
+      <li>✅ Дружня команда інструкторів</li>
+      <li>✅ Безпека понад усе: екіпірування включено</li>
+      <li>✅ Фото- та відеофіксація поїздки</li>
+      <li>✅ Індивідуальний підхід до кожного клієнта</li>
+    </ul>
+  </section>
+
+  <section id="services">
+    <h2>ПОСЛУГИ та ціни</h2>
+    <p>Скоро тут з’явиться таблиця з актуальними послугами та цінами. Слідкуйте за оновленнями!</p>
+  </section>
+
+  <section id="rules">
+    <h2>УМОВИ</h2>
+    <p>Мінімальний вік — 14 років (з дозволом батьків). Усі учасники проходять інструктаж перед стартом. Обов’язково екіпірування. Заборонено вживати алкоголь до або під час катання. </p>
+  </section>
+
+  <section id="contacts">
+    <h2>КОНТАКТИ</h2>
+    <div class="contact">
+      <p>📞 Телефон: +38 (096) 123-45-67</p>
+      <p>📍 Локація:</p>
+      <div class="map-container">
+        <iframe src="https://maps.google.com/maps?q=50.4501,30.5234&amp;hl=uk&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
