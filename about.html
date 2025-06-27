@@ -16,12 +16,34 @@
 
     header {
       background: #000;
-      padding: 20px;
-      text-align: center;
+      padding: 10px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    header img {
-      height: 80px;
+    .logo {
+      height: 70px;
+    }
+
+    .contacts, .languages {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .contacts a, .languages a {
+      color: #ffcc00;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.95em;
+    }
+
+    .languages img {
+      width: 24px;
+      height: auto;
     }
 
     main {
@@ -39,9 +61,13 @@
       margin-bottom: 20px;
     }
 
-    p {
+    p, ul {
       font-size: 1.2em;
       margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 20px;
     }
 
     footer {
@@ -53,20 +79,34 @@
     }
 
     @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .logo {
+        height: 60px;
+      }
+
       h1 {
         font-size: 1.8em;
       }
 
-      p {
+      p, ul {
         font-size: 1em;
-      }
-
-      header img {
-        height: 60px;
       }
 
       main {
         padding: 20px 15px;
+      }
+
+      .contacts a, .languages a {
+        font-size: 0.9em;
+      }
+
+      .languages img {
+        width: 20px;
       }
     }
   </style>
@@ -75,8 +115,19 @@
 
   <header>
     <a href="index.html">
-      <img src="logo.png" alt="PitBikeDrive Logo" />
+      <img src="logo.png" alt="PitBikeDrive Logo" class="logo" />
     </a>
+
+    <div class="contacts">
+      <a href="https://instagram.com/pitbikedrive" target="_blank">@pitbikedrive</a>
+      <a href="tel:+380953251690">+380 95 325-16-90</a>
+    </div>
+
+    <div class="languages">
+      <a href="about_uk.html"><img src="ua_flag.png" alt="Українська" title="Українська" /></a>
+      <a href="about_ru.html"><img src="ru_flag.png" alt="Русский" title="Русский" /></a>
+      <a href="about_en.html"><img src="en_flag.png" alt="English" title="English" /></a>
+    </div>
   </header>
 
   <main>
