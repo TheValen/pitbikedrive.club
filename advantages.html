@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Про нас | PitBikeDrive</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Arial Black', Gadget, sans-serif;
+      background-color: #000;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.9);
+      padding: 10px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      height: 60px;
+    }
+
+    .contacts, .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contacts span, .contacts a {
+      color: #ffcc00;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .lang-switcher button {
+      background: none;
+      border: 1px solid #fff;
+      color: #fff;
+      padding: 5px 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .lang-switcher button:hover {
+      background: #ffcc00;
+      color: #000;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      color: #00ffff;
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .logo { height: 45px; }
+
+      .contacts span {
+        font-size: 14px;
+      }
+
+      .lang-switcher button {
+        padding: 4px 8px;
+        font-size: 14px;
+      }
+
+      .content {
+        padding: 20px 15px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="PitBikeDrive Logo" class="logo" />
+
+  <div class="contacts">
+    <img src="insta_icon.jpg" alt="Instagram" width="20" />
+    <a href="https://instagram.com/pitbikedrive" target="_blank">@pitbikedrive</a>
+    <img src="phone_icon.png" alt="Phone" width="20" />
+    <span><a href="tel:+380953251690">+380 95 325-16-90</a></span>
+  </div>
+
+  <div class="lang-switcher">
+    <button onclick="setLang('uk')">UA</button>
+    <button onclick="setLang('ru')">RU</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
+</header>
+
+<div class="content">
+  <h1 id="title">Про нас</h1>
+  <p id="text">
+    PitBikeDrive — це більше ніж просто прокат пітбайків. Це місце, де драйв стає стилем життя. Ми створили унікальний простір для справжніх поціновувачів адреналіну, швидкості та свободи. У нас найкращі траси, професійна техніка, повна екіпіровка і досвідчені інструктори.
+  </p>
+  <p id="text2">
+    Наша мета — зробити мотоспорт доступним кожному. Незалежно від віку чи досвіду, з нами ти зможеш відчути себе гонщиком, розвинути навички та отримати неймовірні емоції!
+  </p>
+</div>
+
+<script>
+  const langs = {
+    uk: {
+      title: "Про нас",
+      text: "PitBikeDrive — це більше ніж просто прокат пітбайків. Це місце, де драйв стає стилем життя...",
+      text2: "Наша мета — зробити мотоспорт доступним кожному..."
+    },
+    ru: {
+      title: "О нас",
+      text: "PitBikeDrive — это больше, чем просто прокат питбайков. Это место, где драйв становится образом жизни...",
+      text2: "Наша цель — сделать мотоспорт доступным каждому..."
+    },
+    en: {
+      title: "About us",
+      text: "PitBikeDrive is more than just pitbike rental. It's a place where drive becomes a way of life...",
+      text2: "Our goal is to make motorsport accessible to everyone..."
+    }
+  };
+
+  function setLang(lang) {
+    document.getElementById('title').textContent = langs[lang].title;
+    document.getElementById('text').textContent = langs[lang].text;
+    document.getElementById('text2').textContent = langs[lang].text2;
+  }
+</script>
+
+</body>
+</html>
