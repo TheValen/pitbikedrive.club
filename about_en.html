@@ -1,9 +1,155 @@
-<h1>About Us</h1>
+<!DOCTYPE html>
+<html lang="us">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>О нас | PitBikeDrive</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      background: #111;
+      line-height: 1.6;
+    }
 
-<div class="content">
-  <p><strong>PitBikeDrive</strong> is more than just a club — it’s a community of true adrenaline lovers!</p>
-  <p>We unite people who crave freedom, emotions, and new experiences. Our pitbike tours give you a chance to feel like a real racer, test your skills, and share excitement with friends.</p>
-  <p>We provide fully serviced bikes, protective gear, and thorough briefings. Whether you're a beginner or experienced rider, we’ve got you covered. All routes are designed for both thrill and safety.</p>
-  <p>Our mission is to promote pitbike culture in Ukraine and make it accessible to everyone.</p>
-  <p><em>Ride. Feel. Live it — PitBikeDrive.</em></p>
-</div>
+    header {
+      background: #000;
+      padding: 10px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      height: 70px;
+    }
+
+    .contacts, .languages {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .contacts a, .languages a {
+      color: #ffcc00;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.95em;
+    }
+
+    .languages img {
+      width: 24px;
+      height: auto;
+    }
+
+    main {
+      max-width: 960px;
+      margin: auto;
+      padding: 40px 20px;
+      background: #222;
+      border-radius: 10px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #ffcc00;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    p, ul {
+      font-size: 1.2em;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      background: #000;
+      color: #aaa;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .logo {
+        height: 60px;
+      }
+
+      h1 {
+        font-size: 1.8em;
+      }
+
+      p, ul {
+        font-size: 1em;
+      }
+
+      main {
+        padding: 20px 15px;
+      }
+
+      .contacts a, .languages a {
+        font-size: 0.9em;
+      }
+
+      .languages img {
+        width: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html">
+      <img src="logo.png" alt="PitBikeDrive Logo" class="logo" />
+    </a>
+
+    <div class="contacts">
+      <a href="https://instagram.com/pitbikedrive" target="_blank">@pitbikedrive</a>
+      <a href="tel:+380953251690">+380 95 325-16-90</a>
+    </div>
+
+    <div class="languages">
+      <a href="about.html"><img src="ua_flag.png" alt="Українська" title="Українська" /></a>
+      <a href="about_ru.html"><img src="ru_flag.png" alt="Русский" title="Русский" /></a>
+      <a href="about_en.html"><img src="en_flag.png" alt="English" title="English" /></a>
+    </div>
+  </header>
+
+  <main>
+    <h1>О нас</h1>
+    <p>PitBikeDrive is a place where adrenaline, drive and real emotions are born! We are a team of like-minded people who are in love with motorcycles and active recreation. We have thousands of rides, dozens of events and unforgettable memories of our guests behind us.</p>
+
+    <p>Our mission is to make pit biking accessible to anyone who wants to try something new, get a positive charge and feel real control over a motorcycle.</p>
+
+    <p><strong>PitBikeDrive — This:</strong></p>
+    <ul>
+      <li>Equipment that undergoes regular maintenance</li>
+      <li>Convenient location near Kyiv</li>
+      <li>Experienced instructors and personal approach</li>
+      <li>Cool atmosphere and photo content to remember</li>
+    </ul>
+
+    <p>Join us and become a part of our motorcycle family!</p>
+  </main>
+
+  <footer>
+    &copy; 2025 PitBikeDrive | All rights reserved
+  </footer>
+
+</body>
+</html>
