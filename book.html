@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ОБЕРИ ПІТБАЙК ТА ЗАБРОНЮЙ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #0d0d0d;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #e60023;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .description {
+      margin-bottom: 40px;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #ccc;
+    }
+
+    .bike {
+      background-color: #1a1a1a;
+      border: 2px solid #e60023;
+      border-radius: 12px;
+      margin-bottom: 40px;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .bike img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .bike iframe {
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .bike-details {
+      flex: 1;
+    }
+
+    .bike h2 {
+      color: #e63946;
+    }
+
+    form {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #e60023;
+    }
+
+    form label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    form input,
+    form select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+    }
+
+    form button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #e60023;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #1a1a1a;
+      text-align: center;
+      padding: 20px;
+      color: #ccc;
+    }
+
+    .contacts a {
+      color: #e63946;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .contacts a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ОБЕРИ ПІТБАЙК ТА ЗАБРОНЮЙ</h1>
+  </header>
+
+  <div class="container">
+    <div class="description">
+      <p>Ознайомся з нашими питбайками та обери той, що підходить саме тобі. Переглянь фото, відео, характеристики, і просто залиш заявку онлайн. Ми зв'яжемося з тобою для підтвердження!</p>
+    </div>
+
+    <div class="bike">
+      <div class="bike-details">
+        <h2>Kayo TD 125</h2>
+        <p>Потужний та надійний питбайк для новачків і досвідчених райдерів. Ідеальний для траси та легкого бездоріжжя.</p>
+        <ul>
+          <li>Двигун: 125cc</li>
+          <li>Коробка: 4 передачі</li>
+          <li>Вага: 70 кг</li>
+        </ul>
+      </div>
+      <div>
+        <img src="images/kayo125.jpg" alt="Kayo TD 125">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <form action="https://formspree.io/f/yourformid" method="POST">
+      <h2 style="color:#e63946;">Забронювати</h2>
+
+      <label>Ім’я:</label>
+      <input type="text" name="name" required>
+
+      <label>Телефон:</label>
+      <input type="tel" name="phone" required placeholder="+380">
+
+      <label>Дата та час:</label>
+      <input type="datetime-local" name="datetime" required>
+
+      <label>Оберіть модель питбайка:</label>
+      <select name="bike">
+        <option>Kayo TD 125</option>
+        <option>Kayo TT 140</option>
+        <option>Lifan 150</option>
+      </select>
+
+      <button type="submit">Забронювати</button>
+    </form>
+  </div>
+
+  <footer>
+    <div class="contacts">
+      📞 <a href="tel:+380953251690">+38 (095) 325-16-90</a> |
+      📷 <a href="https://www.instagram.com/pitbikedrive" target="_blank">@pitbikedrive</a> |
+      🏠 <a href="index.html">На головну</a>
+    </div>
+    <div>© 2025 Pitbike Drive Club</div>
+  </footer>
+
+</body>
+</html>
