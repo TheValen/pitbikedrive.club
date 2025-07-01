@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Подарунковий сертифікат | Pitbike Drive Club</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #0d0d0d;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #e60023;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      color: #fff;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    .certificate-preview {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .certificate-preview img {
+      max-width: 100%;
+      border-radius: 10px;
+      border: 2px solid #e60023;
+      box-shadow: 0 0 10px rgba(230, 0, 35, 0.6);
+    }
+    .description {
+      margin-bottom: 30px;
+      line-height: 1.6;
+      color: #ddd;
+    }
+    .description strong {
+      color: #e63946;
+    }
+    form {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #e60023;
+    }
+    form label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      resize: vertical;
+    }
+    form button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #e60023;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    footer {
+      background-color: #1a1a1a;
+      text-align: center;
+      padding: 20px;
+      color: #ccc;
+    }
+    .contacts a {
+      color: #e63946;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Подарунковий сертифікат</h1>
+  </header>
+
+  <div class="container">
+
+    <div class="certificate-preview">
+      <img src="images/sertificat.jpg" alt="Приклад подарункового сертифікату">
+    </div>
+
+    <div class="description">
+      <p>Подаруй незабутні емоції та драйв тим, кого любиш! Наш <strong>подарунковий сертифікат</strong> — це ідеальний спосіб привітати з днем народження, ювілеєм, святом або просто зробити сюрприз!</p>
+      <p>Сертифікат можна використати на <strong>покатушки на пітбайку</strong> чи іншу послугу клубу. Термін дії — 12 місяців з моменту придбання. Дизайн персоналізується під ваше замовлення.</p>
+    </div>
+
+    <form action="https://formspree.io/f/yourformid" method="POST">
+      <h2 style="color:#e63946;">Замовити сертифікат</h2>
+
+      <label>Ваше ім’я:</label>
+      <input type="text" name="name" required>
+
+      <label>Номер телефону:</label>
+      <input type="tel" name="phone" required placeholder="+380">
+
+      <label>Кому сертифікат? (Ім’я отримувача):</label>
+      <input type="text" name="recipient">
+
+      <label>Повідомлення або побажання:</label>
+      <textarea name="message" rows="5" placeholder="Наприклад: На день народження, дизайн як на прикладі."></textarea>
+
+      <button type="submit">Надіслати заявку</button>
+    </form>
+  </div>
+
+  <footer>
+    <div class="contacts">
+      📞 <a href="tel:+380953251690">+38 (095) 325-16-90</a> |
+      📷 <a href="https://www.instagram.com/pitbikedrive" target="_blank">@pitbikedrive</a> |
+      🏠 <a href="index.html">На головну</a>
+    </div>
+    <div>© 2025 Pitbike Drive Club</div>
+  </footer>
+
+</body>
+</html>
