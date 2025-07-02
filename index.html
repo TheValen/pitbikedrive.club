@@ -17,6 +17,12 @@
       font-family: 'Arial Black', Gadget, sans-serif;
       color: #ffffff;
       overflow: hidden;
+      background-color: #000;
+    }
+
+    body.light-mode {
+      background-color: #fff;
+      color: #000;
     }
 
     .background-video {
@@ -79,6 +85,17 @@
       cursor: pointer;
     }
 
+    .theme-toggle {
+      margin-left: 10px;
+      padding: 5px 10px;
+      font-size: 14px;
+      background: #ffcc00;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
     nav.menu {
       display: flex;
       flex-wrap: wrap;
@@ -137,6 +154,11 @@
       text-decoration: underline;
     }
 
+    body.light-mode .main-content {
+      background: rgba(255, 255, 255, 0.9);
+      color: #000;
+    }
+
     @media (max-width: 768px) {
       .main {
         padding-top: 220px;
@@ -163,6 +185,7 @@
     <img src="logo.png" alt="PitBikeDrive Logo" class="logo" />
 
     <button class="menu-toggle">☰ Меню</button>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
 
     <div class="lang-switcher">
       <img src="ua_flag.png" alt="UA" title="Українська" onclick="setLanguage('uk')" />
@@ -230,6 +253,10 @@
       ru: 'Наша локация:',
       en: 'Location:'
     }[lang];
+  }
+
+  function toggleTheme() {
+    document.body.classList.toggle('light-mode');
   }
 </script>
 
