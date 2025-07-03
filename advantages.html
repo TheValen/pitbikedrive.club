@@ -7,6 +7,41 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    footer {
+  background-color: #111;
+  color: #ccc;
+  padding: 20px 10px;
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid #333;
+}
+
+footer .contacts {
+  margin-bottom: 10px;
+}
+
+footer a {
+  color: #ffcc00;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  footer .contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  footer a {
+    margin: 0;
+    
+  }
+
     body {
       font-family: 'Arial Black', Gadget, sans-serif;
       background-color: #000;
