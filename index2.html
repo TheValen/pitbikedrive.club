@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PitBikeDrive</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      min-height: 100%;
+      font-family: 'Arial Black', Gadget, sans-serif;
+      color: #ffffff;
+      background-color: #000;
+      overflow-x: hidden;
+    }
+
+    .background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      padding: 10px 20px;
+    }
+
+    header img.logo {
+      height: 100px;
+    }
+
+    .top-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .contacts, .lang-switcher {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .lang-switcher img, .contacts img {
+      width: 25px;
+      height: auto;
+      cursor: pointer;
+    }
+
+    .contacts span {
+      font-size: 16px;
+      font-weight: bold;
+      color: #ffcc00;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: #00ffff;
+      cursor: pointer;
+    }
+
+    nav.menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    nav.menu a {
+      text-decoration: none;
+      color: #00ffff;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+        margin-top: 10px;
+      }
+
+      nav.menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 10px 0;
+        margin-top: 10px;
+      }
+
+      nav.menu.active {
+        display: flex;
+      }
+    }
+
+    .main {
+      position: relative;
+      min-height: 100vh;
+      padding: 140px 20px 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .main-content {
+      max-width: 600px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 15px;
+      font-size: 18px;
+    }
+
+    .main-content a {
+      color: #ffcc00;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .main {
+        padding-top: 220px;
+        align-items: flex-start;
+      }
+
+      .main-content {
+        font-size: 16px;
+        width: 100%;
+      }
+
+      header img.logo {
+        height: 80px;
+      }
+    }
+
+    footer {
+      background-color: #111;
+      color: #ccc;
+      padding: 20px 10px;
+      text-align: center;
+      font-size: 14px;
+      border-top: 1px solid #333;
+    }
+
+    footer .contacts {
+      margin-bottom: 10px;
+    }
+
+    footer a {
+      color: #ffcc00;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      footer .contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      footer a {
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<iframe class="background-video" src="https://www.youtube.com/embed/zjxWjEroCMY?autoplay=1&mute=1&controls=0&loop=1&playlist=zjxWjEroCMY" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+<header>
+  <div class="top-bar">
+    <img src="logo.png" alt="PitBikeDrive Logo" class="logo" />
+
+    <button class="menu-toggle">☰ Меню</button>
+
+    <div class="lang-switcher">
+      <img src="ua_flag.png" alt="UA" title="Українська" onclick="setLanguage('uk')" />
+      <img src="ru_flag.png" alt="RU" title="Русский" onclick="setLanguage('ru')" />
+      <img src="en_flag.png" alt="EN" title="English" onclick="setLanguage('en')" />
+    </div>
+
+    <div class="contacts">
+      <img src="insta_icon.jpg" alt="Instagram" />
+      <span>@pitbikedrive</span>
+      <img src="phone_icon.png" alt="Phone" />
+      <span>+380 95 325-16-90</span>
+      <img src="phone_icon.png" alt="Phone" />
+      <span>+380 63 440-40-99</span>
+    </div>
+  </div>
+
+  <nav class="menu" id="mainMenu">
+    <a href="about.html" data-uk="[ПРО НАС]" data-ru="[О НАС]" data-en="[ABOUT US]">[ПРО НАС]</a>
+    <a href="advantages.html" data-uk="[Чому саме ми?]" data-ru="[Почему мы?]" data-en="[Why Us?]">[Чому саме ми?]</a>
+    <a href="services.html" data-uk="[ПОСЛУГИ та ціни]" data-ru="[УСЛУГИ и цены]" data-en="[SERVICES & Prices]">[ПОСЛУГИ та ціни]</a>
+    <a href="conditions.html" data-uk="[УМОВИ та Q&A (FAQ)]" data-ru="[УСЛОВИЯ и FAQ]" data-en="[CONDITIONS & FAQ]">[УМОВИ та Q&A (FAQ)]</a>
+    <a href="promo.html" data-uk="[АКЦІЇ]" data-ru="[АКЦИИ]" data-en="[PROMO]">[АКЦІЇ]</a>
+    <a href="book.html" data-uk="[ОБЕРИ ПІТБАЙК ТА ЗАБРОНЮЙ!]" data-ru="[ВЫБЕРИ ПИТБАЙК И ЗАБРОНИРУЙ!]" data-en="[CHOOSE A PITBIKE & BOOK]">[ОБЕРИ ПІТБАЙК ТА ЗАБРОНЮЙ!]</a>
+    <a href="ser.html" data-uk="[✅ Подарунковий сертифікат / Подаруй драйв!]" data-ru="[🎁 Подарочный сертификат / Подари драйв!]" data-en="[🎁 Gift Certificate / Give emotions!]">[✅ Подарунковий сертифікат / Подаруй драйв!]</a>
+    <a href="photo.html" data-uk="[Фото та відео]" data-ru="[Фото и видео]" data-en="[Gallery]">[Фото та відео]</a>
+    <a href="contacts.html" data-uk="[КОНТАКТИ]" data-ru="[КОНТАКТЫ]" data-en="[CONTACTS]">[КОНТАКТИ]</a>
+  </nav>
+</header>
+
+<div class="main">
+  <div class="main-content">
+    <h2 id="title">Культура Пітбайкінгу</h2>
+    <p id="desc">
+      PitBikeDrive by NikoMXclub – це професійний прокат пітбайків та ендуро-мотоциклів а також баггі під Києвом: Потужні мототури, інструктаж від досвідчених інструкторів, повна екіпіровка, старанно підготовлені маршрути для початківців і досвідчених райдерів. Наш клуб пропонує щоденний прокат, уважне обслуговування техніки та гарантує яскраві враження від керування мото та квадро! Тут можна покататися самостійно або з інструктором, зробити круті фото й відео, і це ідеально підходить як для людей, які мріють спробувати мотоспорт, так і для тих, хто вже в темі!
+      Пітбайкінг — це не просто хобі, це стиль життя. Ми розвиваємо культуру безпечного драйву та адреналінових пригод.
+      З нами ви отримаєте незабутні враження на професійній техніці! PitbikeDrive by NikoMXclub! Бронюй покатуху для себе чи друзів!
+    </p>
+    <p><strong id="locationLabel">Наша локація:</strong> <a href="https://maps.app.goo.gl/1EJhrCJArh65Wtze9" target="_blank">Google Maps</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="contacts">
+    📞 <a href="tel:+380953251690">+38 (095) 325-16-90</a> |
+    📷 <a href="https://www.instagram.com/pitbikedrive" target="_blank">@pitbikedrive</a> |
+    🏠 <a href="book.html">Забронюй</a>
+  </div>
+  <div>© 2025 Pitbike Drive Club | Всі права захищені</div>
+</footer>
+
+<script>
+  document.querySelector('.menu-toggle').addEventListener('click', function () {
+    document.getElementById('mainMenu').classList.toggle('active');
+  });
+
+  function setLanguage(lang) {
+    const elements = document.querySelectorAll('[data-' + lang + ']');
+    elements.forEach(el => {
+      el.textContent = el.getAttribute('data-' + lang);
+    });
+
+    document.getElementById('title').textContent = {
+      uk: 'Культура Пітбайкінгу',
+      ru: 'Культура Питбайкинга',
+      en: 'Pitbike Culture'
+    }[lang];
+
+    document.getElementById('desc').innerHTML = {
+      uk: 'PitBikeDrive by NikoMXclub – це професійний прокат питбайків та ендуро-мотоциклів, а також баггі під Києвом. Потужні мототури, інструктаж від досвідчених інструкторів, повна екіпіровка, маршрути для початківців і досвідчених райдерів. Це ідеально як для тих, хто хоче спробувати вперше, так і для фанатів бездоріжжя!',
+      ru: 'PitBikeDrive by NikoMXclub — это профессиональный прокат питбайков, эндуро и багги под Киевом. Мощные мототуры, обучение с инструкторами, полная экипировка и интересные маршруты. Отличный выбор для новичков и опытных райдеров!',
+      en: 'PitBikeDrive by NikoMXclub is a professional pitbike, enduro, and buggy rental near Kyiv. Intense moto tours, training with instructors, full gear, and routes for beginners and pros alike. Perfect for first-timers and adrenaline seekers!'
+    }[lang];
+
+    document.getElementById('locationLabel').textContent = {
+      uk: 'Наша локація:',
+      ru: 'Наша локация:',
+      en: 'Location:'
+    }[lang];
+  }
+</script>
+
+</body>
+</html>
