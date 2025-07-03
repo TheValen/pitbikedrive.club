@@ -7,41 +7,6 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    footer {
-  background-color: #111;
-  color: #ccc;
-  padding: 20px 10px;
-  text-align: center;
-  font-size: 14px;
-  border-top: 1px solid #333;
-}
-
-footer .contacts {
-  margin-bottom: 10px;
-}
-
-footer a {
-  color: #ffcc00;
-  text-decoration: none;
-  margin: 0 5px;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 600px) {
-  footer .contacts {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  footer a {
-    margin: 0;
-    
-  }
-
     body {
       font-family: 'Arial Black', Gadget, sans-serif;
       background-color: #000;
@@ -109,6 +74,29 @@ footer a:hover {
       margin-bottom: 20px;
     }
 
+    footer {
+      background-color: #111;
+      color: #ccc;
+      padding: 20px 10px;
+      text-align: center;
+      font-size: 14px;
+      border-top: 1px solid #333;
+    }
+
+    footer .contacts {
+      margin-bottom: 10px;
+    }
+
+    footer a {
+      color: #ffcc00;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
     @media (max-width: 768px) {
       .logo { height: 45px; }
 
@@ -133,13 +121,26 @@ footer a:hover {
         font-size: 16px;
       }
     }
+
+    @media (max-width: 600px) {
+      footer .contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      footer a {
+        margin: 0;
+      }
+    }
   </style>
 </head>
 <body>
 
 <header>
   <a href="index.html">
-  <img src="logo.png" alt="PitBikeDrive Logo" class="logo" />
+    <img src="logo.png" alt="PitBikeDrive Logo" class="logo" />
+  </a>
 
   <div class="contacts">
     <img src="insta_icon.jpg" alt="Instagram" width="20" />
@@ -164,6 +165,15 @@ footer a:hover {
     Наша мета — зробити мотоспорт доступним кожному. Незалежно від віку чи досвіду, з нами ти зможеш відчути себе гонщиком, розвинути навички та отримати неймовірні емоції! Якщо тобі потрібен індивідуальний підхід, і ти розумієш що таке команда ентузіастів і чому краще навчатися та катати саме тут, то нам з тобою точно по дорозі 👍
   </p>
 </div>
+
+<footer>
+  <div class="contacts">
+    📞 <a href="tel:+380953251690">+38 (095) 325-16-90</a> |
+    📷 <a href="https://www.instagram.com/pitbikedrive" target="_blank">@pitbikedrive</a> |
+    🏠 <a href="index.html">На головну</a>
+  </div>
+  <div>© 2025 Pitbike Drive Club | Всі права захищені</div>
+</footer>
 
 <script>
   const langs = {
@@ -190,18 +200,6 @@ footer a:hover {
     document.getElementById('text2').textContent = langs[lang].text2;
   }
 </script>
-
-</body>
-</html>
-
-  <footer>
-    <div class="contacts">
-      📞 <a href="tel:+380953251690">+38 (095) 325-16-90</a> |
-      📷 <a href="https://www.instagram.com/pitbikedrive" target="_blank">@pitbikedrive</a> |
-      🏠 <a href="index.html">На головну</a>
-    </div>
-    <div>© 2025 Pitbike Drive Club | Всі права захищені</div>
-  </footer>
 
 </body>
 </html>
