@@ -1,105 +1,18 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Умови оренди | Pitbike Drive Club</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #0d0d0d;
-      color: #ffffff;
-      padding: 20px;
-    }
-
-    header {
-      background-color: #e60023;
-      text-align: center;
-      padding: 20px 10px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-
-    section {
-      max-width: 800px;
-      margin: 40px auto;
-      background-color: #1a1a1a;
-      padding: 30px;
-      border-radius: 12px;
-      border: 2px solid #e60023;
-    }
-
-    h2 {
-      color: #e63946;
-      margin-top: 0;
-    }
-
-    ul {
-      padding-left: 20px;
-      line-height: 1.8;
-    }
-
-    ul li {
-      margin-bottom: 10px;
-    }
-
-    p {
-      line-height: 1.6;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 12px 24px;
-      background-color: #e60023;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #cc001f;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 14px;
-      color: #ccc;
-    }
-
-    .contacts {
-      margin-top: 20px;
-    }
-
-    .contacts a {
-      color: #e63946;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-    .contacts a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
 <body>
-
   <header>
-    <h1>Умови оренди</h1>
+    <h1 id="mainTitle">Умови оренди</h1>
   </header>
 
+  <div style="text-align:center; margin-top: 20px;">
+    <button onclick="setLang('uk')">UA</button>
+    <button onclick="setLang('ru')">RU</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
+
   <section>
-    <h2>Правила оренди питбайків</h2>
-    <p>Щоб забезпечити безпеку та комфорт усіх учасників, просимо ознайомитися з умовами:</p>
-    <ul>
+    <h2 id="rulesTitle">Правила оренди питбайків</h2>
+    <p id="introText">Щоб забезпечити безпеку та комфорт усіх учасників, просимо ознайомитися з умовами:</p>
+    <ul id="rulesList">
       <li>Оренда доступна особам від 16 років (від 10 — тільки з інструктором).</li>
       <li>Перед поїздкою проводиться короткий інструктаж з техніки безпеки.</li>
       <li>Шолом, рукавиці та захист входять у вартість.</li>
@@ -108,8 +21,31 @@
       <li>Керування у стані алкогольного/наркотичного сп’яніння заборонено.</li>
       <li>Порушення правил може стати причиною зупинки поїздки без повернення коштів.</li>
     </ul>
+    <a href="index.html" class="btn" id="backBtn">⬅ На головну</a>
+  </section>
 
-    <a href="index.html" class="btn">⬅ На головну</a>
+  <section class="faq">
+    <h2 id="faqTitle">Часто задавані питання (FAQ)</h2>
+
+    <div class="faq-item">
+      <h3 class="question" data-key="q1">❓ Чи можна приїхати без досвіду?</h3>
+      <p class="answer" data-key="a1">✅ Так, наші інструктори проведуть навчання перед поїздкою, підберуть техніку під рівень.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 class="question" data-key="q2">❓ Який одяг потрібно мати з собою?</h3>
+      <p class="answer" data-key="a2">✅ Бажано зручний спортивний одяг. Все захисне спорядження ми надаємо.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 class="question" data-key="q3">❓ Скільки триває катання?</h3>
+      <p class="answer" data-key="a3">✅ Стандартна поїздка триває 1 годину, але можливі й довші сесії за домовленістю.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 class="question" data-key="q4">❓ Чи можна приїхати великою компанією?</h3>
+      <p class="answer" data-key="a4">✅ Так! Ми можемо організувати заїзди для кількох учасників одночасно.</p>
+    </div>
   </section>
 
   <footer>
@@ -120,5 +56,167 @@
     <div>© 2025 Pitbike Drive Club</div>
   </footer>
 
+  <script>
+    const translations = {
+      uk: {
+        mainTitle: "Умови оренди",
+        rulesTitle: "Правила оренди питбайків",
+        introText: "Щоб забезпечити безпеку та комфорт усіх учасників, просимо ознайомитися з умовами:",
+        rules: [
+          "Оренда доступна особам від 16 років (від 10 — тільки з інструктором).",
+          "Перед поїздкою проводиться короткий інструктаж з техніки безпеки.",
+          "Шолом, рукавиці та захист входять у вартість.",
+          "Перед стартом підписується договір і залишаєється застава (документ або грошовий еквівалент).",
+          "У разі пошкоджень техніки відповідальність несе орендар.",
+          "Керування у стані алкогольного/наркотичного сп’яніння заборонено.",
+          "Порушення правил може стати причиною зупинки поїздки без повернення коштів."
+        ],
+        backBtn: "⬅ На головну",
+        faqTitle: "Часто задавані питання (FAQ)",
+        q1: "❓ Чи можна приїхати без досвіду?",
+        a1: "✅ Так, наші інструктори проведуть навчання перед поїздкою, підберуть техніку під рівень.",
+        q2: "❓ Який одяг потрібно мати з собою?",
+        a2: "✅ Бажано зручний спортивний одяг. Все захисне спорядження ми надаємо.",
+        q3: "❓ Скільки триває катання?",
+        a3: "✅ Стандартна поїздка триває 1 годину, але можливі й довші сесії за домовленістю.",
+        q4: "❓ Чи можна приїхати великою компанією?",
+        a4: "✅ Так! Ми можемо організувати заїзди для кількох учасників одночасно."
+      },
+      ru: {
+        mainTitle: "Условия аренды",
+        rulesTitle: "Правила аренды питбайков",
+        introText: "Чтобы обеспечить безопасность и комфорт, пожалуйста, ознакомьтесь с правилами:",
+        rules: [
+          "Аренда доступна с 16 лет (с 10 — только с инструктором).",
+          "Перед поездкой проводится краткий инструктаж по технике безопасности.",
+          "Шлем, перчатки и защита включены в стоимость.",
+          "Перед стартом подписывается договор и вносится залог (документ или денежный эквивалент).",
+          "В случае повреждения техники ответственность несёт арендатор.",
+          "Запрещено управление в состоянии алкогольного/наркотического опьянения.",
+          "Нарушение правил может привести к остановке поездки без возврата средств."
+        ],
+        backBtn: "⬅ На главную",
+        faqTitle: "Часто задаваемые вопросы (FAQ)",
+        q1: "❓ Можно приехать без опыта?",
+        a1: "✅ Да, наши инструкторы проведут обучение и подберут технику под ваш уровень.",
+        q2: "❓ Какую одежду брать с собой?",
+        a2: "✅ Лучше всего — удобную спортивную. Всю экипировку мы предоставим.",
+        q3: "❓ Сколько длится катание?",
+        a3: "✅ Стандартная поездка длится 1 час, но возможны и более длительные сессии.",
+        q4: "❓ Можно приехать большой компанией?",
+        a4: "✅ Конечно! Мы организуем заезды для нескольких участников одновременно."
+      },
+      en: {
+        mainTitle: "Rental Terms",
+        rulesTitle: "Pitbike Rental Rules",
+        introText: "To ensure everyone's safety and comfort, please review the rental conditions:",
+        rules: [
+          "Rental is available from age 16 (from 10 — only with instructor).",
+          "Short safety briefing is provided before the ride.",
+          "Helmet, gloves and protection are included.",
+          "Contract and deposit (document or money) required before start.",
+          "Renter is responsible for damages to the vehicle.",
+          "Riding under influence of alcohol/drugs is prohibited.",
+          "Violation of rules may result in ride termination without refund."
+        ],
+        backBtn: "⬅ Back to Home",
+        faqTitle: "Frequently Asked Questions (FAQ)",
+        q1: "❓ Can I come without experience?",
+        a1: "✅ Yes! Our instructors will train you and pick the right bike for your level.",
+        q2: "❓ What clothes should I bring?",
+        a2: "✅ Comfortable sportswear is recommended. We provide all protection gear.",
+        q3: "❓ How long is the ride?",
+        a3: "✅ A standard ride lasts 1 hour, but longer sessions can be arranged.",
+        q4: "❓ Can I come with a group?",
+        a4: "✅ Absolutely! We can organize rides for multiple participants."
+      }
+    };
+
+    function setLang(lang) {
+      const t = translations[lang];
+      document.getElementById('mainTitle').textContent = t.mainTitle;
+      document.getElementById('rulesTitle').textContent = t.rulesTitle;
+      document.getElementById('introText').textContent = t.introText;
+      document.getElementById('backBtn').textContent = t.backBtn;
+      document.getElementById('faqTitle').textContent = t.faqTitle;
+
+      const rulesList = document.getElementById('rulesList');
+      rulesList.innerHTML = t.rules.map(rule => `<li>${rule}</li>`).join('');
+
+      // FAQ вопросы/ответы
+      document.querySelector('[data-key="q1"]').textContent = t.q1;
+      document.querySelector('[data-key="a1"]').textContent = t.a1;
+      document.querySelector('[data-key="q2"]').textContent = t.q2;
+      document.querySelector('[data-key="a2"]').textContent = t.a2;
+      document.querySelector('[data-key="q3"]').textContent = t.q3;
+      document.querySelector('[data-key="a3"]').textContent = t.a3;
+      document.querySelector('[data-key="q4"]').textContent = t.q4;
+      document.querySelector('[data-key="a4"]').textContent = t.a4;
+    }
+
+    // Показ/скрытие ответов по клику
+    document.querySelectorAll('.question').forEach(q => {
+      q.addEventListener('click', () => {
+        q.classList.toggle('open');
+        const answer = q.nextElementSibling;
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
+
+  <style>
+    .faq {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: #1a1a1a;
+      padding: 30px;
+      border-radius: 12px;
+      border: 2px solid #e60023;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+    }
+
+    .question {
+      cursor: pointer;
+      color: #ffcc00;
+      margin: 0;
+    }
+
+    .question:hover {
+      text-decoration: underline;
+    }
+
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #ccc;
+    }
+
+    .question.open::after {
+      content: " ▲";
+      color: #ffcc00;
+    }
+
+    .question:not(.open)::after {
+      content: " ▼";
+      color: #888;
+    }
+
+    button {
+      background-color: #e60023;
+      border: none;
+      color: white;
+      padding: 6px 16px;
+      margin: 5px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #c3001e;
+    }
+  </style>
 </body>
-</html>
